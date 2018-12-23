@@ -10,4 +10,4 @@ const f = (()=>{
         return root
     }
 })()
-modudle.exports = f
+module.exports = f
