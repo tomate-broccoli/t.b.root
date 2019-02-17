@@ -1,5 +1,5 @@
 // index.js
-const f = (()=>{
+const root = (()=>{
     let initialized = false
     let root
     return dirname=>{
@@ -10,4 +10,14 @@ const f = (()=>{
         return root
     }
 })()
-module.exports = f
+
+module.exports = root
+
+
+if(module.parent) return
+
+// sample
+const samp = require('./index.js')
+console.log(`** 1: ${samp('/foo/bar')}.`)
+console.log(`** 2: ${samp(__dirname)}.`)
+console.log(`** 3: ${samp()}.`)
